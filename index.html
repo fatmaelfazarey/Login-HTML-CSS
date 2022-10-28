@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=League+Spartan:wght@100;200;300;400;500;600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Poppins:wght@200;400;600&family=Work+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,100;1,400&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <section>
+        <form>
+            <div>
+                <h2>Singn in</h2>
+                <div class="inputBox">
+                    <label>Username</label>
+                    <input type="text" required/>
+                </div>
+                <div class="inputBox">
+                    <label>Password</label>
+                    <input type="password" required/>
+                </div>
+                <div class="linkBox">
+                    <a href="#">Forgot Password ?</a>
+                    <a href="#">Singnup</a>
+                </div>
+                <input type="submit" value="Login" />
+            </div>
+        </form>
+    </section>
+</body>
+<style>
+    * {
+        font-family: "League Spartan", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --main-color: #45f3ff;
+        --rad-8: 8px;
+    }
+
+    body {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #23242a;
+    }
+
+    section {
+        position: relative;
+        width: 380px;
+        height: 420px;
+        background-color: #1c1c1c;
+        border-radius: var(--rad-8);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto 10px;
+    }
+
+    section::after,
+    section::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--rad-8);
+        animation-name: rotate;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    section::after {
+        top: -50%;
+        left: -50%;
+        background: linear-gradient(0deg, var(--main-color), transparent);
+        transform-origin: bottom right;
+    }
+
+    section::before {
+        top: 50%;
+        left: 50%;
+        background: linear-gradient(0deg, transparent, var(--main-color));
+        transform-origin: top left;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    form {
+        width: calc(100% - 5px);
+        height: calc(100% - 5px);
+        background-color: #1c1c1c;
+        position: relative;
+        z-index: 3;
+        border-radius: var(--rad-8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--main-color);
+        padding: 50px 40px;
+    }
+
+    form>div {
+        width: 100%;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 25px;
+        letter-spacing: 1.2px;
+        font-weight: 500;
+    }
+
+    h2,
+    .inputBox,
+    .linkBox {
+        margin-bottom: 35px;
+    }
+
+    input,
+    label {
+        display: block;
+    }
+
+    input {
+        padding: 0 10px;
+    }
+
+    label {
+        color: #8f8f8f;
+        transition: .5s;
+        font-size: 18px;
+        padding: 5px;
+    }
+    .inputBox:focus >label
+    /*,.label:valid > label*/ {
+        color: var(--main-color);
+        padding-left: 0px;
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        height: 2px;
+        background-color: var(--main-color);
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        transition: .5s;
+        color:#23242a;
+        letter-spacing: 1.05px;
+    }
+
+    .inputBox:focus>input{
+        height: 44px;
+    }
+    .linkBox {
+        display: flex;
+        justify-content: space-between;
+    }
+    a {
+        text-decoration: none;
+        color: var(--main-color);
+    }
+    .linkBox a:first-child {
+        color: #8f8f8f;
+    }
+
+    a:hover, 
+    .linkBox a:first-child:hover{
+        color: #40dfeb;
+    }
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: var(--main-color);
+        color: black;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover{
+        background-color: #23242a;
+        color: var(--main-color);
+    }
+</style>
+
+</html>
