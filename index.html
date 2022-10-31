@@ -19,12 +19,12 @@
             <div>
                 <h2>Singn in</h2>
                 <div class="inputBox">
-                    <label>Username</label>
                     <input type="text" required/>
+                    <label>Username</label>
                 </div>
                 <div class="inputBox">
-                    <label>Password</label>
                     <input type="password" required/>
+                    <label>Password</label>
                 </div>
                 <div class="linkBox">
                     <a href="#">Forgot Password ?</a>
@@ -45,6 +45,13 @@
 
     :root {
         --main-color: #45f3ff;
+        /*
+        --main-color: red;
+        --main-color: blue;
+        --main-color: green;
+        --main-color: darkorange;
+        --main-color: yellow;
+        */
         --rad-8: 8px;
     }
 
@@ -138,10 +145,9 @@
     .linkBox {
         margin-bottom: 35px;
     }
-
-    input,
-    label {
-        display: block;
+    .inputBox{
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     input {
@@ -154,8 +160,8 @@
         font-size: 18px;
         padding: 5px;
     }
-    .inputBox:focus >label
-    /*,.label:valid > label*/ {
+    input:focus +label
+    ,input:valid +label {
         color: var(--main-color);
         padding-left: 0px;
         font-size: 14px;
@@ -174,7 +180,8 @@
         letter-spacing: 1.05px;
     }
 
-    .inputBox:focus>input{
+    input:focus,
+    input:valid{
         height: 44px;
     }
     .linkBox {
@@ -191,7 +198,8 @@
 
     a:hover, 
     .linkBox a:first-child:hover{
-        color: #40dfeb;
+        color: var(--main-color);
+        opacity: .8;
     }
     input[type="submit"] {
         padding: 10px 20px;
